@@ -1,0 +1,24 @@
+@font-face {
+    font-family:gothic-pixel;
+    src: url(font/GothicPixels.ttf);
+}
+@font-face {
+    font-family:h4; src: url(font/BirchLeaf.ttf);
+}
+@font-face {
+    font-family:paragrah;
+    src: url(font/alagard.ttf);
+}
+h1 {
+    font-family:gothic-pixel;
+    font-size: 50px;
+}
+h3 {
+    font-family:h4;
+    font-size: 20px;
+}
+h4 {
+    font-family:paragrah;
+    font-size: 15px;
+    color: #ffffff;
+}

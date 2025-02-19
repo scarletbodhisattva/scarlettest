@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title> Enter the void </title> 
+   <link rel="stylesheet" type="text/css" href="style.css">
+    <style>
+          
+        a {
+            text-decoration: none;
+        }
+        body {
+            text-align: center;
+            cursor: url('cursor/idle.cur'), default;
+
+        }
+        a:hover {
+            cursor: url('cursor/sword.cur'), pointer;
+        }
+        .floating {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body style="background-color: black;">
+    <h1 style="color: rgb(250, 250, 250);"> <span style="font-size: larger;">B</span>e   not afraid </h1>
+    <h4 style="color: aliceblue;"> I swear to serve God, to protect pilgrims on their journey, and to never retreat from battle unless outnumbered three to one. I shall live in purity, humility, and obedience, seeking no wealth nor earthly rewards, only the will of the Lord.</h4>
+<img src="images/Untitled Project.jpg" style="width: 50%; height: 75%;">
+    <a href="main.html"> 
+<h3 style="color: aliceblue;" id="pledge">Pledge allegiance</h3>
+</a>
+
+<script>
+    document.getElementById('pledge').addEventListener('click', function(event) {
+        event.preventDefault();
+        const link = event.target.closest('a').href;
+        const text = event.target;
+        const letters = text.innerText.split('');
+        text.innerHTML = letters.map(letter => `<span class="floating-letter">${letter}</span>`).join('');
+        const floatingLetters = document.querySelectorAll('.floating-letter');
+        floatingLetters.forEach((letter, index) => {
+            setTimeout(() => {
+                letter.classList.add('floating');
+            }, index * 100);
+        });
+
+        // Play sound
+        const audio = new Audio('path/to/your/audio/file.mp3');
+        audio.play();
+
+        setTimeout(function() {
+            window.location.href = link;
+        }, 6000);
+    });
+</script>
+<script>
+  let audio = new Audio('audio/accessgranted.mp3'); // Ensure the file path is correct
+
+document.getElementById('pledge').addEventListener("click", function (event) {
+    event.preventDefault(); // Prevents immediate navigation
+
+    // Play the audio
+    audio.play().then(() => {
+        console.log("Audio is playing...");
+    }).catch(error => {
+        console.error("Error playing audio:", error);
+    });
+
+    // Floating text animation
+    const link = event.target.closest('a').href;
+    const text = event.target;
+    const letters = text.innerText.split('');
+    text.innerHTML = letters.map(letter => `<span class="floating-letter">${letter}</span>`).join('');
+    const floatingLetters = document.querySelectorAll('.floating-letter');
+    floatingLetters.forEach((letter, index) => {
+        setTimeout(() => {
+            letter.classList.add('floating');
+        }, index * 100);
+    });
+
+    // Delay before navigating
+    setTimeout(function() {
+        window.location.href = link;
+    }, 6000);
+});
+</script>
+<style>
+    .floating-letter {
+        display: inline-block;
+    }
+</style>
+</body>
+</html>
+<script>
+    document.querySelector('h1').classList.add('floating');
+    
+</script>
